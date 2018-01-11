@@ -1,0 +1,14 @@
+{
+  "name": "Financial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Scott Nash",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
