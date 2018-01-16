@@ -17,7 +17,11 @@ https://vsupalov.com/6-docker-basics/
 
 ``` docker build -t node . ```
 
-### Run Docker containers
+### Run Docker Container
 This starts the container, setting the port to 8081.  Meaning you can browse to the container at http://localhost:8081.  It mounts 2 volumes.  The app folder where the app exists inside the container and the node_modules folder that will exist inside the app folder.  An empty node_modules folder will be created inside the root folder, but the installed node modules will not be visible there.  They are only visible *inside* the container.
 
+*Note* - You can run the following command without the -it, but if you do, when you exit the container [ctrl-C], the container will still be running in the background.
+
 ``` docker run -it -p 8081:8081 -v /c/workspace/docker-node:/app -v node_modules:/app/node_modules  node ```
+
+## Node Modules
