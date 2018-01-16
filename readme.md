@@ -35,4 +35,4 @@ If you only have one container, it will be easy to see which container we want, 
 
 ``` docker exec -it 86a89 /bin/bash ```
 
-This will drop you to a command line *inside* the running container.  From here you can install any node modules that you need, and your package.json will be updated with the new dependencies.  Note that while here inside your container, you can ls to see the contents of your app and into the node_modules folder where you will see all off the installed node packages.
+This will drop you to a command line *inside* the running container.  From here you can install any node modules that you need, and your package.json will be updated with the new dependencies.  Note that while here inside your container, you can ls to see the contents of your app and cd into the node_modules folder where you will see all off the installed node packages.
