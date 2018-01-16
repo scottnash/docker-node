@@ -16,5 +16,6 @@ COPY . /app
 #Install dependencies
 RUN yarn
 
-CMD node index.js
+
 EXPOSE 8081
+CMD node index.js

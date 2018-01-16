@@ -1,12 +1,11 @@
 //Load express module with `require` directive
-const express = require('express');
-const app = express();
-const path = require('path');
+var express = require('express')
+var app = express()
 
-
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/wwwroot/index.html'));
-});
+//Define request response in root URL (/)
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
 
 //Launch listening server on port 8081
 app.listen(8081, function () {
