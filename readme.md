@@ -28,7 +28,9 @@ This starts the container, setting the port to 8081.  Meaning you can browse to 
 When installing node modules, wheter through npm or--more preferably--yarn, it's important that you install them *inside* the running container. To do this, make sure the container is running and then in a new terminal/power shell window, run the following commands.
 
 First, list docker containers to get the container id
+
 ``` docker container ps ```
 
 If you only have one container, it will be easy to see which container we want, but if there are multiple, look for the one with the image that matches the name of the container that you used when you ran the container. You will use the container id in the following command. Note, you can copy the entire container id and paste it into command, or you only have to type enough of it for the command line to recognize which one you're referring to.
+
 ``` docker exec -it 86a89 /bin/bash ```
