@@ -13,7 +13,7 @@ https://vsupalov.com/6-docker-basics/
 ``` docker rmi $(docker images -q) ```
 
 ### Build Docker Image
--t is used to name the image, in this case "node"
+-t is used to tag (i.e. name) the image, in this case "node"
 
 ``` docker build -t node . ```
 

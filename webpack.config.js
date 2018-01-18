@@ -6,6 +6,12 @@ module.exports = {
         app: ['babel-polyfill', './src/main.jsx'],
         vendor: ['react', 'react-dom', 'redux'],
     },
+    resolve: {
+      alias: {
+        Src: path.resolve(__dirname, 'src'),
+        Components: path.resolve(__dirname, 'src/components/')
+      }
+    },
     watch: true,
     watchOptions: {
       aggregateTimeout: 300,
@@ -13,7 +19,11 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, "wwwroot", "static")
+        path: path.resolve(__dirname, "wwwroot", "static"),
+        publicPath: '/'
+    },
+    devServer: {
+      historyApiFallback: true,
     },
     module: {
         loaders: [
