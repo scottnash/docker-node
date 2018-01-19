@@ -19,11 +19,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, "wwwroot", "static"),
-        publicPath: '/'
-    },
-    devServer: {
-      historyApiFallback: true,
+        path: path.resolve(__dirname, "wwwroot/static")
     },
     module: {
         loaders: [

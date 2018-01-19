@@ -2,19 +2,17 @@
 var express = require('express')
 var app = express()
 
-//Define request response in root URL (/)
-
-app.get('/', function(req,res) {
+// set static folder to deliver css/js etc
+app.use(express.static(__dirname + '/wwwroot/static/'));
+// set all routes with * wildcard so that all requests to index.html and we let react-router handle the routing
+app.get('/*', function(req,res) {
   res.sendFile('wwwroot/index.html' , { root : __dirname});
 });
-
-app.use(express.static(__dirname + '/wwwroot/static/'));
 
 //Launch listening server on port 8081
 app.listen(8081, function () {
   console.log('app listening on port 8081!')
-})
-
+});
 
 //without express
 // // requiring the HTTP interfaces in node
