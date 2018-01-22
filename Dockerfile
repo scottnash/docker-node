@@ -16,6 +16,7 @@ COPY . /app
 #Install dependencies
 RUN yarn
 
+RUN yarn global add babel-cli
 RUN yarn global add webpack
 
 EXPOSE 8081

@@ -16,3 +16,9 @@ export const setHosts = (hosts)=> {
     payload: hosts
   };
 }
+
+export const setHost = (host)=>
+  Promise.resolve({
+      type: c.SET_HOST,
+      payload: host
+  });

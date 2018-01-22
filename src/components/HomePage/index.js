@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import Hosts from 'Components/Hosts';
 
 export default class HomePage extends Component {
-  constructor(props){
-    super(props);
-    console.log('hello');
-  }
 
   render(){
     return (
-      <p>Some Stuff</p>
+      <Hosts />
     );
   }
 

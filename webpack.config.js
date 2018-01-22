@@ -9,7 +9,8 @@ module.exports = {
     resolve: {
       alias: {
         Src: path.resolve(__dirname, 'src'),
-        Components: path.resolve(__dirname, 'src/components/')
+        Components: path.resolve(__dirname, 'src/components/'),
+        Redux: path.resolve(__dirname, 'src/redux/')
       }
     },
     watch: true,

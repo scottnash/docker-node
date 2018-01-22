@@ -10,6 +10,16 @@ const hosts = (state = [], action) =>{
   }
 }
 
+const host = (state = { }, action) => {
+  switch (action.type){
+    case c.SET_HOST:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
-  hosts
+  hosts,
+  host
 });
