@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SNLHosts from 'Redux/SNLHosts';
 import Host from './Host';
+import styles from './hosts.scss';
 
 class Hosts extends Component{
   componentDidMount(){
@@ -21,9 +22,9 @@ class Hosts extends Component{
 
   renderHosts(){
     return (
-      <ul>
+      <ol className={ styles.hostsList }>
         { this.props.hosts.map( host => <li key = { host.ontologyId }><Host host = { host } /></li> ) }
-      </ul>
+      </ol>
     )
   }
 }

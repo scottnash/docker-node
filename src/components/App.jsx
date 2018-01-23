@@ -3,6 +3,7 @@ import Hosts from 'Components/Hosts';
 import HostDetail from 'Components/HostDetail'
 import Nav from 'Components/global/Nav';
 import { Switch, Route } from 'react-router-dom';
+import styles from './global.scss';
 
 export default class App extends Component {
   render() {

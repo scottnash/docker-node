@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: {
         app: ['babel-polyfill', './src/main.jsx'],
@@ -11,7 +13,8 @@ module.exports = {
         Src: path.resolve(__dirname, 'src'),
         Components: path.resolve(__dirname, 'src/components/'),
         Redux: path.resolve(__dirname, 'src/redux/')
-      }
+      },
+      extensions: ['*', '.scss', '.css', '.js', '.jsx', '.json']
     },
     watch: true,
     watchOptions: {
@@ -32,6 +35,13 @@ module.exports = {
                     presets: ['react', 'es2015', 'stage-1'],
                     plugins: ['transform-runtime']
                 }
+            },
+            {
+                test: /\.scss|.css$/,
+                loader: ExtractTextPlugin.extract({
+                  fallback: 'style-loader',
+                  use: 'css-loader?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'
+                })
             }
         ]
     },
@@ -39,6 +49,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest'],
             minChunks: Infinity
-        })
+        }),
+        new ExtractTextPlugin('react.css'),
     ]
 };
