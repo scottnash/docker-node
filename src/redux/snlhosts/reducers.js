@@ -13,7 +13,7 @@ const hosts = (state = [], action) =>{
 const host = (state = { }, action) => {
   switch (action.type){
     case c.SET_HOST:
-      return action.payload;
+      return action.host;
     default:
       return state;
   }
