@@ -1,4 +1,11 @@
-# What is Docker?
+# React Docker
+A simple site built using React inside a Docker Container running Node with Express.  It uses an open API call to Ranker to retrieve a list of everyone who has ever hosted Saturday Night Live and displays them in a list.  Each host is linked to a details page.
+
+Although quite basic, it demonstrates some best practices and important concepts that should be helpful to anyone learning Docker and React.
+
+******
+
+## What is Docker?
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. By doing so, thanks to the container, the developer can rest assured that the application will run on any other machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.
 
 ### Docker Basics
