@@ -27,9 +27,13 @@ class Hosts extends Component{
   renderHosts(){
     return (
       <List>
-        { this.props.hosts.map( host => <Host key = { host.ontologyId } host = { host } /> ) }
+        { this.props.hosts.map( host => <Host key = { host.ontologyId } host = { host } handleClick={ this.selectHost } /> ) }
       </List>
     )
+  }
+
+  selectHost = (hostID)=> {
+    this.props.history.push(`/host/${ hostID }`)
   }
 }
 

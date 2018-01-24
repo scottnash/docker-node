@@ -20,7 +20,7 @@ export default class App extends Component {
         />
 
         <Switch>
-          <Route exact path="/" component={ Hosts } />
+          <Route exact path="/" component={ Hosts } history={ history } />
           <Route path='/host/:hostID' component={ HostDetail } />
         </Switch>
       </div>
