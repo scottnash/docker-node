@@ -4,8 +4,6 @@ import SNLHosts from 'Redux/SNLHosts';
 import Host from './Host';
 import styles from './hosts.scss';
 import { List } from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-
 
 class Hosts extends Component{
   componentDidMount(){
@@ -45,7 +43,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    host: SNLHosts.selectors.host(state),
     hosts: SNLHosts.selectors.hosts(state)
   }
 }

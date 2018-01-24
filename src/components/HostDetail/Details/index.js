@@ -6,7 +6,6 @@ import Divider from 'material-ui/Divider';
 import styles from '../hostdetail.scss';
 
 export default ({ host }) => {
-  console.log(host);
   return (
     <Card>
       <CardHeader
@@ -22,7 +21,6 @@ export default ({ host }) => {
         <Divider />
         <HostingDates host={ host } />
       </CardText>
-
     </Card>
   )
 }
