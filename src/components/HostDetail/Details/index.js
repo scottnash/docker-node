@@ -1,19 +1,29 @@
 import React from 'react';
 import moment from 'moment';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Subheader from 'material-ui/Subheader';
+import Divider from 'material-ui/Divider';
+import styles from '../hostdetail.scss';
 
 export default ({ host }) => {
   console.log(host);
   return (
-    <div>
-      <h1>{ host.name }</h1>
-      <HostDOB host={ host } />
-      <HostBirthPlace host={ host } />
-      <div>
-        <HostImage host={ host } />
-        <HostWiki host={ host } />
-      </div>
-      <HostingDates host={ host } />
-    </div>
+    <Card>
+      <CardHeader
+        title={ host.name }
+        subtitle={ <div><HostDOB host={ host } /><HostBirthPlace host={ host } /></div> }
+      />
+      <CardText>
+        <Divider />
+        <div className={ styles.hostInfo }>
+          <HostImage host={ host } />
+          <HostWiki host={ host } />
+        </div>
+        <Divider />
+        <HostingDates host={ host } />
+      </CardText>
+
+    </Card>
   )
 }
 
@@ -22,8 +32,7 @@ const HostDOB = ( { host } ) => {
   if(moment(DOB.propertyValue, 'YYYY-MM-DD', true).isValid()){
     return(
         <p>
-          Date of Birth:
-          { moment(DOB.propertyValue).format('MMMM Do, YYYY') } ({ moment().diff(DOB.propertyValue, 'years') })
+          Date of Birth: { moment(DOB.propertyValue).format('MMMM Do, YYYY') } ({ moment().diff(DOB.propertyValue, 'years') })
         </p>
     )
   }
@@ -73,7 +82,7 @@ const HostingDates = ( { host } ) => {
 
     return (
       <div>
-        <h4>Hosting Dates</h4>
+        <Subheader>Hosting Dates</Subheader>
         <ul>
         { hostingDates.map( (hostingDate, index) => <li key={ index }>{ hostingDate.showDate }</li> ) }
         </ul>

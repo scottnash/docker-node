@@ -1,4 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Avatar from 'material-ui/Avatar';
+import { ListItem } from 'material-ui/List';
 
-export default ({ host, handleClick }) => <Link to={`/host/${ host.ontologyId }`} label={ host.name }>{ host.name }</Link>;
+export default ({ host }) => <ListItem
+  href = {`/host/${ host.ontologyId }`}
+  leftAvatar = { host.image ? <Avatar src={ host.image.url } /> : null }
+  primaryText = { host.name }
+/>;

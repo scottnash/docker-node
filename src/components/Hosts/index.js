@@ -3,10 +3,15 @@ import { connect } from 'react-redux';
 import SNLHosts from 'Redux/SNLHosts';
 import Host from './Host';
 import styles from './hosts.scss';
+import { List } from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+
 
 class Hosts extends Component{
   componentDidMount(){
-    this.props.getHosts();
+    if(this.props.hosts.length === 0){
+      this.props.getHosts();
+    }
   }
 
   render(){
@@ -14,7 +19,6 @@ class Hosts extends Component{
 
     return (
       <div>
-        <div>Hosts</div>
         { this.renderHosts() }
       </div>
     );
@@ -22,9 +26,9 @@ class Hosts extends Component{
 
   renderHosts(){
     return (
-      <ol className={ styles.hostsList }>
-        { this.props.hosts.map( host => <li key = { host.ontologyId }><Host host = { host } /></li> ) }
-      </ol>
+      <List>
+        { this.props.hosts.map( host => <Host key = { host.ontologyId } host = { host } /> ) }
+      </List>
     )
   }
 }
